@@ -21,6 +21,10 @@ We just pulled all the code from the internet and placed it on our computer. Now
    
     cd Microprocessor
 
+Every time you want to go work on the project you need to make sure the code is up to date. To do this type. 
+
+      git checkout master
+
 
   
 
