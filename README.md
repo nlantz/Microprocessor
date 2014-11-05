@@ -11,15 +11,15 @@ To start off make sure you have git installed. The next set of code is inputs fo
 
 Next move into a directory that you want to work in, Documents for example 
    
-    *cd Documents*
+    cd Documents
 
 Next we need to pull the code down from out repository so we can work on it.
    
-    *git clone https://github.com/nlantz/Microprocessor.git*
+    git clone https://github.com/nlantz/Microprocessor.git
 
 We just pulled all the code from the internet and placed it on our computer. Now move into the folder we ject created.
    
-    *cd Microprocessor*
+    cd Microprocessor
 
 
   
