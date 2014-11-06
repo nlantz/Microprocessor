@@ -11,19 +11,30 @@ To start off make sure you have git installed. The next set of code is inputs fo
 
 Next move into a directory that you want to work in, Documents for example 
    
-    cd Documents
+      cd Documents
 
 Next we need to pull the code down from out repository so we can work on it.
    
-    git clone https://github.com/nlantz/Microprocessor.git
+      git clone https://github.com/nlantz/Microprocessor.git
 
 We just pulled all the code from the internet and placed it on our computer. Now move into the folder we ject created.
    
-    cd Microprocessor
+      cd Microprocessor
 
 Every time you want to go work on the project you need to make sure the code is up to date. To do this type. 
 
       git checkout master
+
+Now you can go about working on the project. If you add a file you can add it in the browser and then checkout master or you can add it through the command line. But if you jsut add it in Xilinx it will not get added to the repo. 
+
+When you are done working or just want to save your work to the repo, "commit" your changes
+
+      git commit -a
+
+The -a is for "all" changes. This saves all your work to your local machine. Now we can upload our local saves to the internet. To so this write. 
+      git push origin master
+
+   
 
 
   
