@@ -24,6 +24,7 @@ We just pulled all the code from the internet and placed it on our computer. Now
 Every time you want to go work on the project you need to make sure the code is up to date. To do this type. 
 
       git checkout master
+      git pull origin master
 
 Now you can go about working on the project. If you add a file you can add it in the browser and then checkout master or you can add it through the command line. But if you jsut add it in Xilinx it will not get added to the repo. 
 
@@ -32,7 +33,13 @@ When you are done working or just want to save your work to the repo, "commit" y
       git commit -a
 
 The -a is for "all" changes. This saves all your work to your local machine. Now we can upload our local saves to the internet. To so this write. 
+ 
       git push origin master
+   
+It will ask you for your user name and password. 
+You will be prompted to enter a message. This is just notes so you can remember what you worked on. When you are finished writing notes press "ctrl x" to exit then "Y" for yes
+
+And thats it! You should be able to see your edits in the repo. 
 
    
 
