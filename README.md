@@ -32,12 +32,14 @@ When you are done working or just want to save your work to the repo, "commit" y
 
       git commit -a
 
-The -a is for "all" changes. This saves all your work to your local machine. Now we can upload our local saves to the internet. To so this write. 
- 
-      git push origin master
-   
+The -a is for "all" changes. This saves all your work to your local machine.
 It will ask you for your user name and password. 
 You will be prompted to enter a message. This is just notes so you can remember what you worked on. When you are finished writing notes press "ctrl x" to exit then "Y" for yes
+
+Now we can upload our local saves to the internet. To do this write. 
+ 
+      git push origin master
+
 
 And thats it! You should be able to see your edits in the repo. 
 
