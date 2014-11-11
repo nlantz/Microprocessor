@@ -62,9 +62,9 @@ notB: inv1 port map (B, nB);
 notA_B: inv1 port map (A_B, nA_B);
 
 orGate1: or_3 port map (nA, B, A_B, OrOut1);
-orGate1: or_3 port map (nA, B, A_B, OrOut2);
-orGate1: or_3 port map (A, B, nA_B, OrOut3);
-orGate1: or_3 port map (A, nB, nA_B, OrOut4);
+orGate2: or_3 port map (A, B, A_B, OrOut2);
+orGate3: or_3 port map (A, B, nA_B, OrOut3);
+orGate4: or_3 port map (A, nB, nA_B, OrOut4);
 
 andGate: and_4 port map (OrOut1, OrOut2, OrOut3, OrOut4, Y);
 

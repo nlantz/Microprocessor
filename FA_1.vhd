@@ -30,7 +30,7 @@ component xor_2 is
            Y : out  STD_LOGIC);
 end component;
 
-signal A, B, Cin, BxorCin, AorB, BorCin, AorCin :  std_logic;
+signal BxorCin, AorB, BorCin, AorCin :  std_logic;
 
 begin
 

@@ -5,7 +5,7 @@ entity FA_8 is
     Port ( A : in  STD_LOGIC_VECTOR (7 downto 0);
            B : in  STD_LOGIC_VECTOR (7 downto 0);
            Y : out  STD_LOGIC_VECTOR (7 downto 0);
-			  Cin : out  STD_LOGIC;
+			  Cin : in  STD_LOGIC;
            Cout : out  STD_LOGIC);
 end FA_8;
 
