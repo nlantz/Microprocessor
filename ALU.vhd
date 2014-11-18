@@ -6,7 +6,7 @@ entity ALU is
            B : in  STD_LOGIC_VECTOR (7 downto 0);
 			  Y : out  STD_LOGIC_VECTOR (7 downto 0);
            Cin : in  STD_LOGIC;
-           Cout : in  STD_LOGIC;
+           Cout : out  STD_LOGIC;
            nARITH_LOGIC : in  STD_LOGIC;
            INVERT : in  STD_LOGIC;
            nAONLY : in  STD_LOGIC);
@@ -21,7 +21,7 @@ component ADD_OR is
            ADD_OR_in : in  STD_LOGIC;
            Cin : in  STD_LOGIC;
            Y : out  STD_LOGIC_VECTOR (7 downto 0);
-           Cout : in  STD_LOGIC);
+           Cout : out  STD_LOGIC);
 end component;
 
 component NEG_NOT is
@@ -37,8 +37,8 @@ end component;
 
 begin
 
-NEG_NOT_1 : NEG_NOT(A, INVERT, nARITH_LOGIC, Y, not_connected);
-ADD_OR_1 : ADD_OR(A, B, nAONLY, nARITH_LOGIC, Cin, Y, Cout);
+NEG_NOT_1 : NEG_NOT port map(A, INVERT,nARITH_LOGIC,negnot_out,not_connected);
+ADD_OR_1 : ADD_OR port map(negnot_out, B, nAONLY, nARITH_LOGIC, Cin, Y, Cout);
 
 end Behavioral;
 
