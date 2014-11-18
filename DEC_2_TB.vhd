@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------
--- DEC_4_TB
+-- DEC_2_TB
 -- EEE 333 
 -- Microprocessor Design
 -- Dutch Althoff
@@ -11,38 +11,49 @@ USE IEEE.NUMERIC_STD.ALL;
 USE IEEE.STD_LOGIC_ARITH.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-ENTITY DEC_4_TB IS
-END DEC_4_TB;
+ENTITY DEC_2_TB IS
+END DEC_2_TB;
  
-ARCHITECTURE behavior OF DEC_4_TB IS 
+ARCHITECTURE behavior OF DEC_2_TB IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT DEC_4
+    COMPONENT DEC_2
     PORT(
          EN : IN  std_logic;
-         A : IN  std_logic_vector(3 downto 0);
-         Y : OUT  std_logic_vector(15 downto 0)
+         A0 : IN  std_logic;
+         A1 : IN  std_logic;
+         Y0 : OUT  std_logic;
+         Y1 : OUT  std_logic;
+         Y2 : OUT  std_logic;
+         Y3 : OUT  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
    signal EN : std_logic := '0';
-   signal A : std_logic_vector(3 downto 0) := (others => '0');
+   signal A0 : std_logic := '0';
+   signal A1 : std_logic := '0';
 
  	--Outputs
-   signal Y : std_logic_vector(15 downto 0);
+   signal Y0 : std_logic;
+   signal Y1 : std_logic;
+   signal Y2 : std_logic;
+   signal Y3 : std_logic;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: DEC_4 PORT MAP (
+   uut: DEC_2 PORT MAP (
           EN => EN,
-          A => A,
-          Y => Y
+          A0 => A0,
+          A1 => A1,
+          Y0 => Y0,
+          Y1 => Y1,
+          Y2 => Y2,
+          Y3 => Y3
         );
-
 
    -- Stimulus process
    stim_proc: process
