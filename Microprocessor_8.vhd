@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Microprocessor_8 is
     Port ( CLK : in STD_LOGIC;
-			  AONLY' : in  STD_LOGIC;
+			  nAONLY : in  STD_LOGIC;
            INVERT : in  STD_LOGIC;
            LOGIC : in  STD_LOGIC;
            ACCUMULATORIE : in  STD_LOGIC;
@@ -58,7 +58,7 @@ signal DEC_out : STD_LOGIC_VECTOR(15 downto 0);
 begin
 REG_and <= DEC_out(0) and DEC_out(15); 
 
-ALU_1 : ALU port map(A, B, ALU_out, '0',  ALU_cout, LOGIC, INVERT, AONLY');
+ALU_1 : ALU port map(A, B, ALU_out, '0',  ALU_cout, LOGIC, INVERT, nAONLY);
 
 REG_8_1 : Register_8bit port map(ALU_out, ACCUMULATORIE, CLK, CLEAR, B);
 REG_8_2 : Register_8bit port map(A, REG_and, CLK, REG_CLR, REG_8_2_out);
