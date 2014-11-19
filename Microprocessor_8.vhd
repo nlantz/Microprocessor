@@ -11,7 +11,6 @@ entity Microprocessor_8 is
            ACCUMULATOROE : in  STD_LOGIC;
            WRITE1 : in  STD_LOGIC;
            READ1 : in  STD_LOGIC;
-           DECODER_IN : in  STD_LOGIC_VECTOR (7 downto 0);
            BUFFER_IN : in  STD_LOGIC_VECTOR (7 downto 0);
            A_OUT : out  STD_LOGIC_VECTOR (7 downto 0);
 			  DEC_IN : in  STD_LOGIC_VECTOR (3 downto 0);
@@ -56,6 +55,8 @@ signal ALU_cout, REG_and : STD_LOGIC;
 signal DEC_out : STD_LOGIC_VECTOR(15 downto 0);
 
 begin
+A_OUT <= A;
+
 REG_and <= DEC_out(0) and DEC_out(15); 
 
 ALU_1 : ALU port map(A, B, ALU_out, '0',  ALU_cout, LOGIC, INVERT, nAONLY);
