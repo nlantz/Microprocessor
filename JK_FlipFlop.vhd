@@ -60,7 +60,7 @@ begin
 		Q_next <= '0';
 	else					-- Note: this concluding statement is not technically necessary, but neglecting
 							-- it results in a short period of Undefined for Q after Reset is high
-		Q_next <= '0';
+		Q_next <= Q_temp;
 	end if;
 end process;
 
