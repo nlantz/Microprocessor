@@ -75,10 +75,10 @@ BEGIN
 		wait for CLK_period/2;
    end process;
  
- 
-    -- power on reset process
-   PoR: process
-   begin		
+
+   -- Stimulus process
+   stim_proc: process
+   begin	
 		--clear the bits and load in zeros to the buffer
 		clear <= '1';
 		REG_CLR <= '1';
@@ -94,20 +94,50 @@ BEGIN
 		
 		--allow ALU out to take over bus A
 		READ1 <= '1';
-      wait;
-   end process;
+		
+		wait for CLK_period;
+		
+		--addition 
+		ACCUMULATOROE <= '0'; -- disable buffer
+		
+		
+		BUFFER_IN <= x"03"; --load 3 into buffer
+		DEC_IN <= x"0"; --enable rom 1
+		READ1 <= '1'; --enable read from rom 1
+		
+		--pass through A 
+		nAONLY <= '0';
+		LOGIC <= '0';
+		INVERT <= '0';
+		
+		--wait for outout to get on bus B
+		ACCUMULATORIE <= '1';
+		wait for CLK_period;
+		ACCUMULATORIE <= '0';
 
-   -- Stimulus process
-   stim_proc: process
-   begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
+		
+		
+		--load 5 onto bus A
+		wait for CLK_period;
+		BUFFER_IN <= x"05";
+		
+		wait for CLK_period;
+		nAONLY <= '1';
+		INVERT <= '0';
+		LOGIC  <= '0';
+		ACCUMULATORIE <= '1';
+		wait for CLK_period;
+		ACCUMULATORIE <= '0';
+		
+		--route sum to output
+		READ1 <= '0';
+		ACCUMULATOROE <= '1';
+		WRITE1 <= '1';
+		DEC_IN <= x"f";
+		wait for CLK_period;
+		
 
-      wait for CLK_period*10;
-
-      -- insert stimulus here 
-
-      wait;
+   wait;
    end process;
 
 END;
