@@ -59,10 +59,12 @@ BEGIN
 		wait for 100 ns;
 		
 		EN <= '1';
-			for I in 0 to 15 loop 			
-				A <= A + '1';
-				wait for 10 ns;
-			end loop;
+		
+		A0 <= '1';
+		wait for 10 ns;
+		
+		A0 <= '0';
+		wait for 10 ns;
 
       wait;
    end process;
